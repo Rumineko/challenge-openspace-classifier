@@ -2,16 +2,18 @@ class Seat:
     def __init__(self, free = True, occupant = ""):
         self._free = free
         self._occupant = occupant
+        
     
     def __str__(self):
-        if self._free == True:
-            return "Empty"
-        else:
+        if self._free != True:
             return self._occupant
+        else:
+            return "Empty"
     
     def set_occupant(self, name):
         self._occupant = name
         self._free = False
+        return name
     """    
     def remove_occupant(self, position):
         self._position = position
@@ -28,7 +30,10 @@ class Seat:
 
     @free.setter
     def free(self):
-        self._free = True
+        if self._occupant == "":
+            self._free = True
+        else:
+            self._free = False
         
     @property
     def occupant(self):
@@ -60,6 +65,7 @@ class Table(Seat):
             
     def left_capacity(self):
         return self._capacity - len(self._seats)
+    
     
     @property
     def capacity(self):

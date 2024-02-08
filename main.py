@@ -1,7 +1,6 @@
 from utils.openspace import Openspace
 import csv
 
-table_capacity = 4
 table_list = []
 number_of_tables = 6
 
@@ -17,8 +16,6 @@ with open(file, 'r') as colleagues:
         list.append(str(i).replace("[","").replace("]","").replace("'",""))
 """
 endresult = openspace.organize(list)
-
-
 
 """
 seat.set_occupant(list[0])
