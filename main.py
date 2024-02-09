@@ -2,8 +2,7 @@ from json import load
 from utils.openspace import Openspace
 from csv import reader
 from random import shuffle
-from utils.table import Seat
-from utils.table import Table
+from utils.table import Seat, Table
 
 # First we load up our CSV file.
 def read_names(filename):
